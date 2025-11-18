@@ -1,0 +1,26 @@
+# Binaries
+/bin
+/out
+*.exe
+
+# Build artifacts
+*.log
+*.tmp
+
+# VCS
+.git
+.gitignore
+
+# IDE/editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# Modules/download cache
+/vendor
+
+# Docker
+**/Dockerfile.*
+
+

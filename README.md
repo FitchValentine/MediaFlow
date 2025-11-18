@@ -123,6 +123,15 @@ Each future microservice (transcoding, moderation, metadata, delivery) can follo
 
 ---
 
+## Containerization & Kubernetes
+
+- **Docker build:** `docker build -t ghcr.io/your-org/mediaflow-ingestion:latest -f build/docker/ingestion/Dockerfile .`
+- **Local run:** `docker run --rm -p 8080:8080 -e KAFKA_BROKERS=localhost:9092 -e STORAGE_ENDPOINT=http://minio:9000 ghcr.io/your-org/mediaflow-ingestion:latest`
+- **Kubernetes apply:** `kubectl apply -f deploy/kubernetes/ingestion.yaml`
+- The manifest includes Namespace, ConfigMap, Secret, Deployment, Service, PodDisruptionBudget, and HPA. Adjust `ingestion-config` values (Kafka brokers, MinIO endpoints, tracing) and `ingestion-secrets` before promotion.
+
+---
+
 ## Roadmap
 
 - Expand moderation to multi-language OCR and brand-safety models.
